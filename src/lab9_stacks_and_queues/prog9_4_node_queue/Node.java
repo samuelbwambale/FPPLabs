@@ -1,0 +1,22 @@
+package lab9_stacks_and_queues.prog9_4_node_queue;
+
+
+public class Node {
+	String data;
+	Node next;
+	
+	@Override
+	public String toString() {
+	    if(data == null) return "";
+		StringBuilder sb = new StringBuilder(data + " ");
+		sb = toString(sb, next);
+		return sb.toString();
+	}
+	private StringBuilder toString(StringBuilder sb, Node n) {
+		if(n == null) return sb;
+		sb.append(n.data + " ");
+		return toString(sb, n.next);
+	}
+}
+
+
